@@ -9,18 +9,40 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "focus-trap-react": "^8.9.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "styled-components": "5.3.3",
-    "react-yan": "1.0.17",
-    "focus-trap-react": "^8.9.1",
-    "what-input": "^5.2.10",
     "react-div-100vh": "0.7.0",
-    "react-responsive": "9.0.0-beta.6"
+    "react-dom": "17.0.2",
+    "react-responsive": "9.0.0-beta.6",
+    "react-yan": "1.0.17",
+    "styled-components": "5.3.3",
+    "what-input": "^5.2.10"
   },
   "devDependencies": {
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-react": "^7.16.0",
+    "@next/eslint-plugin-next": "12.1.0",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-next": "12.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-wesbos": "3.0.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^4.5.2"
   }
 }

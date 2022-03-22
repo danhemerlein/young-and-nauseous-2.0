@@ -1,7 +1,4 @@
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 import Head from 'next/head';
-import { FullScreenHeight } from 'react-yan';
-
 import styled from 'styled-components';
 
 const P = styled.p`

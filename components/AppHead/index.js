@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export default function AppHead() {
+const AppHead = () => {
   return (
     <Head>
       <title>young & nauseous</title>
@@ -43,4 +43,6 @@ export default function AppHead() {
       />
     </Head>
   );
-}
+};
+
+export default AppHead;

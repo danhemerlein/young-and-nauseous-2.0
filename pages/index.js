@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import styled from 'styled-components';
+import AppHead from '../components/AppHead';
 
 const P = styled.p`
   color: ${({ theme }) => {
@@ -10,11 +10,7 @@ const P = styled.p`
 const Home = () => {
   return (
     <div>
-      <Head>
-        <title>Test Next App</title>
-
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <AppHead />
 
       <main>
         <P>main p</P>

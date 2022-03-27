@@ -1,3 +1,4 @@
+import { FullScreenHeight } from 'react-yan';
 import styled from 'styled-components';
 import AppHead from '../components/AppHead';
 
@@ -9,7 +10,7 @@ const P = styled.p`
 
 const Home = () => {
   return (
-    <div>
+    <FullScreenHeight direction="column" offset={0} unsetBreakpoint="none">
       <AppHead />
 
       <main>
@@ -17,7 +18,7 @@ const Home = () => {
       </main>
 
       <footer>footer</footer>
-    </div>
+    </FullScreenHeight>
   );
 };
 

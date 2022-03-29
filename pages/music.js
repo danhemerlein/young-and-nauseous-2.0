@@ -23,6 +23,7 @@ const Music = () => {
     <div>
       <Paragraph>music</Paragraph>
       {data.map((release) => {
+        console.log(release.links.streaming);
         return (
           <Container direction="column">
             <FlexContainer justify="space-between">
@@ -37,9 +38,9 @@ const Music = () => {
             />
             <Tab label="streaming" />
             <div index={0}>
-              {release.links.streaming.map((item) => {
+              {/* {release.links.streaming.map((item) => {
                 return <p>{item.service}</p>;
-              })}
+              })} */}
             </div>
 
             <Tab>purchase</Tab>

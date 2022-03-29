@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FlexContainer, P } from 'react-yan';
 import styled from 'styled-components';
+import Tab from '@mui/material/Tab';
 
 import musicData from './data/music';
 
@@ -30,10 +31,18 @@ const Music = () => {
             </FlexContainer>
             <Image
               src={release.artwork}
-              alt="Picture of the author"
+              alt={release.artworkAlt}
               width={500}
               height={500}
             />
+            <Tab label="streaming" />
+            <div index={0}>
+              {release.links.streaming.map((item) => {
+                return <p>{item.service}</p>;
+              })}
+            </div>
+
+            <Tab>purchase</Tab>
           </Container>
         );
       })}

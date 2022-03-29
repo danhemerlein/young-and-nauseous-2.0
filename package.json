@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mui/material": "5.5.2",
+    "@reach/visually-hidden": "^0.16.0",
     "focus-trap-react": "^8.9.1",
     "next": "12.1.0",
     "react": "17.0.2",

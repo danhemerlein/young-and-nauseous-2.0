@@ -9,9 +9,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalReset />
+
       <ThemeProvider theme={theme}>
         <ReactYanOverrideProvider value={{ fontFamily: 'lack_regular' }}>
           <AppHead />
+
           <AppContainer>
             <Component {...pageProps} />
           </AppContainer>

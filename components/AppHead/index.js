@@ -41,6 +41,7 @@ const AppHead = () => {
         property="twitter:image"
         content="https://www.youngandnauseo.us/images/meta.jpg"
       />
+      <link href="/fonts/fonts.css" rel="stylesheet" />
     </Head>
   );
 };

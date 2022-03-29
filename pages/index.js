@@ -1,23 +1,30 @@
-import { FullScreenHeight } from 'react-yan';
+import { FullScreenHeight, P } from 'react-yan';
 import styled from 'styled-components';
-import AppHead from '../components/AppHead';
 
-const P = styled.p`
+const StyledP = styled(P)`
   color: ${({ theme }) => {
-    return theme.light.red;
+    return theme.light.white;
   }};
 `;
 
 const Home = () => {
   return (
-    <FullScreenHeight direction="column" offset={0} unsetBreakpoint="none">
-      <AppHead />
-
+    <FullScreenHeight direction="column" offset={20} unsetBreakpoint="none">
       <main>
-        <P>main p</P>
+        <div>
+          <StyledP>young and nauseous</StyledP>
+        </div>
+
+        <div>
+          <StyledP>music</StyledP>
+          <StyledP>software</StyledP>
+          <StyledP>art</StyledP>
+        </div>
       </main>
 
-      <footer>footer</footer>
+      <footer>
+        <StyledP>© Dan Hemerlein {new Date().getFullYear()}</StyledP>
+      </footer>
     </FullScreenHeight>
   );
 };

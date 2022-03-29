@@ -1,9 +1,15 @@
-import { FullScreenHeight, P } from 'react-yan';
+import { H1, FullScreenHeight, P } from 'react-yan';
 import styled from 'styled-components';
 
-const StyledP = styled(P)`
+const Paragraph = styled(P)`
   color: ${({ theme }) => {
-    return theme.light.white;
+    return theme.light.light;
+  }};
+`;
+
+const HeadlineOne = styled(H1)`
+  color: ${({ theme }) => {
+    return theme.light.light;
   }};
 `;
 
@@ -11,19 +17,17 @@ const Home = () => {
   return (
     <FullScreenHeight direction="column" offset={20} unsetBreakpoint="none">
       <main>
-        <div>
-          <StyledP>young and nauseous</StyledP>
-        </div>
+        <HeadlineOne>young and nauseous</HeadlineOne>
 
         <div>
-          <StyledP>music</StyledP>
-          <StyledP>software</StyledP>
-          <StyledP>art</StyledP>
+          <Paragraph>music</Paragraph>
+          <Paragraph>software</Paragraph>
+          <Paragraph>art</Paragraph>
         </div>
       </main>
 
       <footer>
-        <StyledP>© Dan Hemerlein {new Date().getFullYear()}</StyledP>
+        <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
       </footer>
     </FullScreenHeight>
   );

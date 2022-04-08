@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { FlexContainer, P } from 'react-yan';
 import styled from 'styled-components';
-import Tab from '@mui/material/Tab';
+import { Tabs, Tab } from '@mui/material';
 
 import musicData from './data/music';
 
@@ -16,34 +16,65 @@ const Container = styled(FlexContainer)`
   max-width: 500px;
 `;
 
+const StyledTab = styled(Tab)`
+  color: ${({ theme }) => {
+    return theme.light.light;
+  }};
+`;
+
+const TabPanel = styled.div`
+  color: ${({ theme }) => {
+    return theme.light.light;
+  }};
+`;
+
 const Music = () => {
   const { data } = musicData;
-  console.log(data);
+
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
+
   return (
     <div>
       <Paragraph>music</Paragraph>
       {data.map((release) => {
-        console.log(release.links.streaming);
         return (
           <Container direction="column">
             <FlexContainer justify="space-between">
               <Paragraph>{release.title}</Paragraph>
               <Paragraph>{release.releaseData}</Paragraph>
             </FlexContainer>
+
             <Image
               src={release.artwork}
               alt={release.artworkAlt}
               width={500}
               height={500}
             />
-            <Tab label="streaming" />
-            <div index={0}>
-              {/* {release.links.streaming.map((item) => {
-                return <p>{item.service}</p>;
-              })} */}
-            </div>
 
-            <Tab>purchase</Tab>
+            <Tabs value={selectedTab} onChange={handleChange}>
+              <StyledTab label="streaming" />
+              <StyledTab label="purchase" />
+            </Tabs>
+
+            {selectedTab === 0 && (
+              <TabPanel value={selectedTab} index={0}>
+                {release.links.streaming.map((item) => {
+                  return <Paragraph>{item.service}</Paragraph>;
+                })}
+              </TabPanel>
+            )}
+
+            {selectedTab === 1 && (
+              <TabPanel value={selectedTab} index={1}>
+                {release.links.purchase.map((item) => {
+                  return <Paragraph>{item.service}</Paragraph>;
+                })}
+              </TabPanel>
+            )}
           </Container>
         );
       })}

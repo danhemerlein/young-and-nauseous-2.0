@@ -4,6 +4,6 @@ export const AppContainer = styled.div`
   padding: 1rem;
 
   background: ${({ theme }) => {
-    return theme.light.dark;
+    return theme.light.light;
   }};
 `;

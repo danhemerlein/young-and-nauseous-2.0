@@ -1,34 +1,47 @@
-import { H1, FullScreenHeight, P } from 'react-yan';
+import Link from 'next/link';
 import styled from 'styled-components';
+import { H1, FullScreenHeight, P, FlexContainer } from 'react-yan';
 
 const Paragraph = styled(P)`
   color: ${({ theme }) => {
-    return theme.light.light;
+    return theme.light.dark;
   }};
 `;
 
 const HeadlineOne = styled(H1)`
   color: ${({ theme }) => {
-    return theme.light.light;
+    return theme.light.dark;
   }};
+`;
+
+const Inner = styled(FlexContainer)`
+  height: 100%;
 `;
 
 const Home = () => {
   return (
     <FullScreenHeight direction="column" offset={20} unsetBreakpoint="none">
-      <main>
-        <HeadlineOne>young and nauseous</HeadlineOne>
+      <Inner direction="column" justify="space-between">
+        <main>
+          <HeadlineOne>young and nauseous</HeadlineOne>
 
-        <div>
-          <Paragraph>music</Paragraph>
-          <Paragraph>software</Paragraph>
-          <Paragraph>art</Paragraph>
-        </div>
-      </main>
+          <Paragraph>
+            <Link href="/music">music</Link>
+          </Paragraph>
 
-      <footer>
-        <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
-      </footer>
+          <Paragraph>
+            <Link href="/software">software</Link>
+          </Paragraph>
+
+          <Paragraph>
+            <Link href="/art">art</Link>
+          </Paragraph>
+        </main>
+
+        <footer>
+          <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
+        </footer>
+      </Inner>
     </FullScreenHeight>
   );
 };

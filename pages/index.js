@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { H1, FullScreenHeight, P, FlexContainer } from 'react-yan';
+import { H1, FullScreenHeight, P, FlexContainer, anchorColor } from 'react-yan';
 
 const Paragraph = styled(P)`
   color: ${({ theme }) => {
@@ -18,6 +18,12 @@ const Inner = styled(FlexContainer)`
   height: 100%;
 `;
 
+const StyledLink = styled.a`
+  ${({ theme }) => {
+    return anchorColor({ color: theme.light.dark });
+  }};
+`;
+
 const Home = () => {
   return (
     <FullScreenHeight direction="column" offset={20} unsetBreakpoint="none">
@@ -26,15 +32,21 @@ const Home = () => {
           <HeadlineOne>young and nauseous</HeadlineOne>
 
           <Paragraph>
-            <Link href="/music">music</Link>
+            <Link href="/music" passHref>
+              <StyledLink>music</StyledLink>
+            </Link>
           </Paragraph>
 
           <Paragraph>
-            <Link href="/software">software</Link>
+            <Link href="/software" passHref>
+              <StyledLink>software</StyledLink>
+            </Link>
           </Paragraph>
 
           <Paragraph>
-            <Link href="/art">art</Link>
+            <Link href="/software" passHref>
+              <StyledLink href="/art">art</StyledLink>
+            </Link>
           </Paragraph>
         </main>
 

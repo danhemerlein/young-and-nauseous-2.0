@@ -8,7 +8,7 @@ import musicData from './data/music';
 
 const Paragraph = styled(P)`
   color: ${({ theme }) => {
-    return theme.light.light;
+    return theme.light.dark;
   }};
 `;
 
@@ -18,13 +18,13 @@ const Container = styled(FlexContainer)`
 
 const StyledTab = styled(Tab)`
   color: ${({ theme }) => {
-    return theme.light.light;
+    return theme.light.dark;
   }};
 `;
 
 const TabPanel = styled.div`
   color: ${({ theme }) => {
-    return theme.light.light;
+    return theme.light.dark;
   }};
 `;
 
@@ -39,7 +39,6 @@ const Music = () => {
 
   return (
     <div>
-      <Paragraph>music</Paragraph>
       {data.map((release) => {
         return (
           <Container direction="column">

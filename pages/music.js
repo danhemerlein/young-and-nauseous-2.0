@@ -4,11 +4,11 @@ import { FlexContainer, P } from 'react-yan';
 import styled from 'styled-components';
 import { Tabs, Tab } from '@mui/material';
 
-import musicData from '../data/music';
+import musicData from 'data/music';
 
 const Paragraph = styled(P)`
   color: ${({ theme }) => {
-    return theme.light.dark;
+    return theme.foreground;
   }};
 `;
 
@@ -17,14 +17,16 @@ const Container = styled(FlexContainer)`
 `;
 
 const StyledTab = styled(Tab)`
+  font-family: 'lack_regular';
+
   color: ${({ theme }) => {
-    return theme.light.dark;
+    return theme.foreground;
   }};
 `;
 
 const TabPanel = styled.div`
   color: ${({ theme }) => {
-    return theme.light.dark;
+    return theme.foreground;
   }};
 `;
 

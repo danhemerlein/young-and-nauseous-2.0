@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <GlobalReset />
 
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme.light}>
         <ReactYanOverrideProvider value={{ fontFamily: 'lack_regular' }}>
           <AppHead />
 

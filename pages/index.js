@@ -1,27 +1,12 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { H1, FullScreenHeight, P, FlexContainer, anchorColor } from 'react-yan';
-
-const Paragraph = styled(P)`
-  color: ${({ theme }) => {
-    return theme.light.dark;
-  }};
-`;
-
-const HeadlineOne = styled(H1)`
-  color: ${({ theme }) => {
-    return theme.light.dark;
-  }};
-`;
+import { FullScreenHeight, FlexContainer } from 'react-yan';
+import { Paragraph, HeadlineOne, StyledLink } from 'styles/elements/typography';
+import Footer from 'components/Footer/Footer';
+import indexData from 'data/index';
 
 const Inner = styled(FlexContainer)`
   height: 100%;
-`;
-
-const StyledLink = styled.a`
-  ${({ theme }) => {
-    return anchorColor({ color: theme.light.dark });
-  }};
 `;
 
 const Home = () => {
@@ -31,28 +16,21 @@ const Home = () => {
         <main>
           <HeadlineOne>young and nauseous</HeadlineOne>
 
-          <Paragraph>
-            <Link href="/music" passHref>
-              <StyledLink>music</StyledLink>
-            </Link>
-          </Paragraph>
-
-          <Paragraph>
-            <Link href="/software" passHref>
-              <StyledLink>software</StyledLink>
-            </Link>
-          </Paragraph>
-
-          <Paragraph>
-            <Link href="/software" passHref>
-              <StyledLink href="/art">art</StyledLink>
-            </Link>
-          </Paragraph>
+          <ul>
+            {indexData.map((datum) => {
+              return (
+                <li>
+                  <Paragraph>
+                    <Link href={datum.url} passHref>
+                      <StyledLink>{datum.title}</StyledLink>
+                    </Link>
+                  </Paragraph>
+                </li>
+              );
+            })}
+          </ul>
         </main>
-
-        <footer>
-          <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
-        </footer>
+        <Footer />
       </Inner>
     </FullScreenHeight>
   );

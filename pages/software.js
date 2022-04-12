@@ -22,8 +22,8 @@ const Software = () => {
         <li>
           <HeadlineTwo>this wesite</HeadlineTwo>
           <Paragraph>
-            This site was coded by hand with love. It leverages Next.js, Styled
-            Components, Material UI and react-yan.
+            This site is coded and maintained by hand with love. It leverages
+            Next.js, Styled Components, Material UI and react-yan.
           </Paragraph>
         </li>
         <li>

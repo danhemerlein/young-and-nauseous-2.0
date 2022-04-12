@@ -4,7 +4,7 @@ import { FlexContainer, P } from 'react-yan';
 import styled from 'styled-components';
 import { Tabs, Tab } from '@mui/material';
 
-import musicData from './data/music';
+import musicData from '../data/music';
 
 const Paragraph = styled(P)`
   color: ${({ theme }) => {

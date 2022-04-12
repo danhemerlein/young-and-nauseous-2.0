@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Footer from 'components/Footer/Footer';
 import Image from 'next/image';
 import { FlexContainer, P } from 'react-yan';
 import styled from 'styled-components';
 import { Tabs, Tab } from '@mui/material';
+import { Paragraph } from 'styles/elements/typography';
 
 import musicData from 'data/music';
-
-const Paragraph = styled(P)`
-  color: ${({ theme }) => {
-    return theme.foreground;
-  }};
-`;
 
 const Container = styled(FlexContainer)`
   max-width: 500px;
 `;
 
 const StyledTab = styled(Tab)`
-  font-family: 'lack_regular';
-
-  color: ${({ theme }) => {
-    return theme.foreground;
-  }};
+  p {
+    text-transform: lowercase;
+  }
 `;
 
 const TabPanel = styled.div`
@@ -57,8 +51,8 @@ const Music = () => {
             />
 
             <Tabs value={selectedTab} onChange={handleChange}>
-              <StyledTab label="streaming" />
-              <StyledTab label="purchase" />
+              <StyledTab label={<Paragraph>streaming</Paragraph>} />
+              <StyledTab label={<Paragraph>purchase</Paragraph>} />
             </Tabs>
 
             {selectedTab === 0 && (
@@ -79,6 +73,7 @@ const Music = () => {
           </Container>
         );
       })}
+      <Footer />
     </div>
   );
 };

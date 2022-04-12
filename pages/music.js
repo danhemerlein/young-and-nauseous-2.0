@@ -12,6 +12,8 @@ import musicData from 'data/music';
 const Container = styled(FlexContainer)`
   margin-top: ${remHelper[16]};
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const TitleContainer = styled(FlexContainer)`
@@ -28,6 +30,8 @@ const TabPanel = styled.div`
   color: ${({ theme }) => {
     return theme.foreground;
   }};
+
+  margin-top: ${remHelper[8]};
 `;
 
 const Music = () => {
@@ -41,7 +45,7 @@ const Music = () => {
 
   return (
     <main>
-      <HeadlineOne>music</HeadlineOne>
+      <HeadlineOne textAlign="center">music</HeadlineOne>
       {data.map((release) => {
         return (
           <Container direction="column">

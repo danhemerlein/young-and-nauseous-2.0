@@ -1,13 +1,13 @@
 import { Paragraph } from 'styles/elements/typography';
 import Footer from 'components/Footer/Footer';
 
-const Software = () => {
+const Art = () => {
   return (
     <div>
-      <Paragraph>software</Paragraph>
+      <Paragraph>art</Paragraph>
       <Footer />
     </div>
   );
 };
 
-export default Software;
+export default Art;

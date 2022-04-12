@@ -8,8 +8,8 @@ const indexData = [
     url: '/software',
   },
   {
-    title: 'art',
-    url: '/art',
+    title: 'more',
+    url: '/more',
   },
 ];
 

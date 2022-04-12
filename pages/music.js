@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import Footer from 'components/Footer/Footer';
 import Image from 'next/image';
-import { FlexContainer, P } from 'react-yan';
+import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
 import { Tabs, Tab } from '@mui/material';
-import { Paragraph } from 'styles/elements/typography';
+import { Paragraph, HeadlineOne } from 'styles/elements/typography';
+import { remHelper } from 'styles/mixins';
 
 import musicData from 'data/music';
 
 const Container = styled(FlexContainer)`
+  margin-top: ${remHelper[16]};
   max-width: 500px;
+`;
+
+const TitleContainer = styled(FlexContainer)`
+  margin-bottom: ${remHelper[8]};
 `;
 
 const StyledTab = styled(Tab)`
@@ -34,14 +40,15 @@ const Music = () => {
   };
 
   return (
-    <div>
+    <main>
+      <HeadlineOne>music</HeadlineOne>
       {data.map((release) => {
         return (
           <Container direction="column">
-            <FlexContainer justify="space-between">
+            <TitleContainer justify="space-between">
               <Paragraph>{release.title}</Paragraph>
               <Paragraph>{release.releaseData}</Paragraph>
-            </FlexContainer>
+            </TitleContainer>
 
             <Image
               src={release.artwork}
@@ -74,7 +81,7 @@ const Music = () => {
         );
       })}
       <Footer />
-    </div>
+    </main>
   );
 };
 

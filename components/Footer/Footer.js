@@ -5,7 +5,7 @@ import { Paragraph, StyledLink } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 
 const StyledFlexContainer = styled(FlexContainer)`
-  p {
+  p:not(:first-of-type) {
     margin-left: ${remHelper[8]};
   }
 `;

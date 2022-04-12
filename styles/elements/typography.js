@@ -1,4 +1,4 @@
-import { H1, P, anchorColor } from 'react-yan';
+import { H1, H2, P, anchorColor } from 'react-yan';
 import styled from 'styled-components';
 
 export const Paragraph = styled(P)`
@@ -8,6 +8,12 @@ export const Paragraph = styled(P)`
 `;
 
 export const HeadlineOne = styled(H1)`
+  color: ${({ theme }) => {
+    return theme.foreground;
+  }};
+`;
+
+export const HeadlineTwo = styled(H2)`
   color: ${({ theme }) => {
     return theme.foreground;
   }};

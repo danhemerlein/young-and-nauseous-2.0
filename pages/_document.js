@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           <meta name="title" content="young and nauseous" />
           <meta
             name="description"
-            content="young and nauseous is a creative multimedia project with an emphasis on music, software, art and fashion."
+            content="young and nauseous is a creative multimedia project with an emphasis on music, software and art."
           />
 
           {/* Open Graph / Facebook */}
@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="young and nauseous" />
           <meta
             property="og:description"
-            content="young and nauseous is a creative multimedia project with an emphasis on music, software, art and fashion."
+            content="young and nauseous is a creative multimedia project with an emphasis on music, software and art."
           />
           <meta
             property="og:image"
@@ -71,12 +71,13 @@ export default class MyDocument extends Document {
           <meta property="twitter:title" content="young and nauseous" />
           <meta
             property="twitter:description"
-            content="young and nauseous is a creative multimedia project with an emphasis on music, software, art and fashion."
+            content="young and nauseous is a creative multimedia project with an emphasis on music, software and art."
           />
           <meta
             property="twitter:image"
             content="https://www.youngandnauseo.us/images/meta.jpg"
           />
+          <link href="/fonts/fonts.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />

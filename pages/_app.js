@@ -1,4 +1,4 @@
-import AppHead from 'components/AppHead';
+// import AppHead from 'components/AppHead';
 import { ReactYanOverrideProvider } from 'react-yan';
 import { ThemeProvider } from 'styled-components';
 import { AppContainer } from 'styles/elements';
@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }) => {
 
       <ThemeProvider theme={theme.light}>
         <ReactYanOverrideProvider value={{ fontFamily: 'lack_regular' }}>
-          <AppHead />
+          {/* <AppHead /> */}
 
           <AppContainer>
             <Component {...pageProps} />

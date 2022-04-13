@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Heart from 'components/assets/svg/Heart';
-import theme from 'styles/theme';
 import { FullScreenHeight, FlexContainer } from 'react-yan';
 import { Paragraph, HeadlineOne, StyledLink } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
 
@@ -34,7 +33,7 @@ const Music = () => {
               <Paragraph>{release.releaseData}</Paragraph>
             </TitleContainer>
 
-            <Image
+            <img
               src={release.artwork}
               alt={release.artworkAlt}
               width={500}

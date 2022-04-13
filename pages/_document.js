@@ -35,9 +35,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <link href="/fonts/fonts.css" rel="stylesheet" />
-        </Head>
+        <Head>{/* <link href="/fonts/fonts.css" rel="stylesheet" /> */}</Head>
         <body>
           <Main />
           <NextScript>

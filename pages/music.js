@@ -1,6 +1,5 @@
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
-
 import { Paragraph, HeadlineOne } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 
@@ -28,18 +27,16 @@ const Music = () => {
       {data.map((release) => {
         return (
           <Container direction="column">
-            <TitleContainer justify="space-between">
+            <TitleContainer>
               <Paragraph>{release.title}</Paragraph>
               <Paragraph>{release.releaseData}</Paragraph>
             </TitleContainer>
-
             <img
               src={release.artwork}
               alt={release.artworkAlt}
               width={500}
               height={500}
             />
-
             <MusicTabs
               streaming={release.links.streaming}
               purchase={release.links.purchase}

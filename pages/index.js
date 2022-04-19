@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Heart from 'components/assets/svg/Heart';
-import { FullScreenHeight, FlexContainer } from 'react-yan';
+import { FlexContainer } from 'react-yan';
 import { Paragraph, HeadlineOne, StyledLink } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 import Footer from 'components/Footer/Footer';
 import indexData from 'data/index';
+
+const Container = styled(FlexContainer)`
+  height: calc(100vh - 20px);
+`;
 
 const Inner = styled(FlexContainer)`
   height: 100%;
@@ -17,7 +21,7 @@ const ListItem = styled.li`
 
 const Home = () => {
   return (
-    <FullScreenHeight direction="column" offset={20} unsetBreakpoint="none">
+    <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
           <HeadlineOne>young and nauseous</HeadlineOne>
@@ -39,7 +43,7 @@ const Home = () => {
         </main>
         <Footer />
       </Inner>
-    </FullScreenHeight>
+    </Container>
   );
 };
 

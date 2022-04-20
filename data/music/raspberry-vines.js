@@ -4,7 +4,7 @@ const raspberryVines = [
   {
     title: 'raspberry vines',
     releaseData: '2.18.2022',
-    artwork: '/images/jillian-mood-ring-optimized.jpg',
+    artwork: '/images/raspberry-vines.jpg',
     artworkAlt: '',
     links: {
       streaming: [

@@ -23,7 +23,7 @@ const Music = () => {
 
   return (
     <main>
-      <HeadlineOne textAlign="center">music</HeadlineOne>
+      <HeadlineOne>music</HeadlineOne>
       {data.map((release) => {
         return (
           <Container direction="column">

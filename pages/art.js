@@ -19,13 +19,17 @@ const Inner = styled(FlexContainer)`
   height: 100%;
 `;
 
+const H1 = styled(HeadlineOne)`
+  margin-bottom: ${remHelper[16]};
+`;
+
 const Art = () => {
   const { data } = artData;
   return (
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <HeadlineOne>album artwork & photography</HeadlineOne>
+          <H1>album artwork & photography</H1>
 
           {data.map((item) => {
             return (

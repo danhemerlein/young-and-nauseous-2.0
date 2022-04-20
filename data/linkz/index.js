@@ -2,7 +2,7 @@ import musicData from '../music';
 import socialsData from '../socials';
 
 const linkzData = {
-  data: [...musicData, ...socialsData],
+  data: [...musicData.data, ...socialsData.data],
 };
 
 export default linkzData;

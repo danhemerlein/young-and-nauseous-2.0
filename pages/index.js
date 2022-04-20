@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Heart from 'components/assets/svg/Heart';
+import Bicycle from 'components/assets/svg/Bicycle';
 import { FlexContainer } from 'react-yan';
 import { Paragraph, HeadlineOne, StyledLink } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
@@ -26,6 +27,7 @@ const Home = () => {
         <main>
           <HeadlineOne>young and nauseous</HeadlineOne>
           <Heart width="140" height="140" fill="#C23B22" />
+          <Bicycle width="140" height="140" fill="#C23B22" />
 
           <ul>
             {indexData.map((datum) => {

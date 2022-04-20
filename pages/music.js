@@ -27,7 +27,7 @@ const Music = () => {
       {data.map((release) => {
         return (
           <Container direction="column">
-            <TitleContainer>
+            <TitleContainer justify="space-between">
               <Paragraph>{release.title}</Paragraph>
               <Paragraph>{release.releaseData}</Paragraph>
             </TitleContainer>

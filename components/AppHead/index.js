@@ -6,7 +6,7 @@ const AppHead = () => {
       <title>young & nauseous</title>
       <link
         rel="icon"
-        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/anatomical-heart_1fac0.png"
+        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
       />
 
       {/* Primary Meta Tags */}
@@ -41,7 +41,6 @@ const AppHead = () => {
         property="twitter:image"
         content="https://www.youngandnauseo.us/images/meta.jpg"
       />
-      <link href="/fonts/fonts.css" rel="stylesheet" />
     </Head>
   );
 };

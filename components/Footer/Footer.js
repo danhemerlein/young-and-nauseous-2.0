@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { A, FlexContainer } from 'react-yan';
 import { Paragraph, StyledLink } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
+import socialsData from 'data/socials';
 
 const StyledFlexContainer = styled(FlexContainer)`
   p:not(:first-of-type) {
@@ -11,6 +12,7 @@ const StyledFlexContainer = styled(FlexContainer)`
 `;
 
 const Footer = () => {
+  const { data } = socialsData;
   return (
     <StyledFlexContainer justify="space-between">
       <FlexContainer>
@@ -19,24 +21,15 @@ const Footer = () => {
             <StyledLink>credits</StyledLink>
           </Link>
         </Paragraph>
-        <Paragraph>
-          <A
-            href="https://www.instagram.com/youngandnauseous/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            insta
-          </A>
-        </Paragraph>
-        <Paragraph>
-          <A
-            href="https://twitter.com/youngndnauseous"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            twitter
-          </A>
-        </Paragraph>
+        {data.map((item) => {
+          return (
+            <Paragraph>
+              <A href={item.url} target="_blank" rel="noopener noreferrer">
+                {item.name}
+              </A>
+            </Paragraph>
+          );
+        })}
       </FlexContainer>
       <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
     </StyledFlexContainer>

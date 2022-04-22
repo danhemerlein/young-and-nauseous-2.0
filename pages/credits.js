@@ -5,6 +5,7 @@ import Heart from 'components/assets/svg/Heart';
 import { remHelper } from 'styles/mixins';
 import Footer from 'components/Footer/Footer';
 import { FlexContainer } from 'react-yan';
+import Bicycle from '../components/assets/svg/Bicycle';
 
 const Container = styled(FlexContainer)`
   height: calc(100vh - 20px);
@@ -26,6 +27,7 @@ const Credits = () => {
         <main>
           <HeadlineOne>credits</HeadlineOne>
           <Heart width="140" height="140" fill="#C23B22" />
+          <Bicycle width="140" height="140" fill="#C23B22" />
 
           <P>
             Lack Italic font by&nbsp;
@@ -41,11 +43,22 @@ const Credits = () => {
           <P>
             Heart illustration by&nbsp;
             <StyledLink
-              href="http://www.adrienmidzic.fr/"
+              href="https://thenounproject.com/bahtiarjhonatan81/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Adrien Midzic
+              Jhonatan
+            </StyledLink>
+          </P>
+
+          <P>
+            Bicycle illustration by&nbsp;
+            <StyledLink
+              href="http://victoriacodes.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Victoria Codes
             </StyledLink>
           </P>
         </main>

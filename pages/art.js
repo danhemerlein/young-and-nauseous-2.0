@@ -1,26 +1,41 @@
 import styled from 'styled-components';
 
 import { HeadlineOne } from 'styles/elements/typography';
-import Heart from 'components/assets/svg/Heart';
 import Footer from 'components/Footer/Footer';
 import { FlexContainer } from 'react-yan';
+import { remHelper } from 'styles/mixins';
+import artData from 'data/art';
 
-const Container = styled(FlexContainer)`
-  height: calc(100vh - 20px);
-  overflow: scroll;
+const Container = styled.div`
+  img {
+    max-width: 750px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: ${remHelper[16]};
+  }
 `;
 
 const Inner = styled(FlexContainer)`
   height: 100%;
 `;
 
+const H1 = styled(HeadlineOne)`
+  margin-bottom: ${remHelper[16]};
+`;
+
 const Art = () => {
+  const { data } = artData;
   return (
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <HeadlineOne>art</HeadlineOne>
-          <Heart width="140" height="140" fill="#C23B22" />
+          <H1>album artwork & photography</H1>
+
+          {data.map((item) => {
+            return (
+              <img src={item.url} alt={item.art} width="100%" height="100%" />
+            );
+          })}
         </main>
       </Inner>
       <Footer />

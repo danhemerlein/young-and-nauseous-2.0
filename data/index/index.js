@@ -8,7 +8,7 @@ const indexData = [
     url: '/software',
   },
   {
-    title: 'art',
+    title: 'artwork & photography',
     url: '/art',
   },
 ];

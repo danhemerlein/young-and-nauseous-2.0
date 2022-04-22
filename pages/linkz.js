@@ -25,9 +25,7 @@ const StyledTab = styled(Tab)`
 `;
 
 const TabPanel = styled.div`
-  color: ${({ theme }) => {
-    return theme.foreground;
-  }};
+  color: #fff;
 
   margin-top: ${remHelper[8]};
 `;
@@ -53,28 +51,42 @@ const Linkz = () => {
       <H1 textAlign="center">linkz</H1>
 
       <Tabs value={selectedTab} onChange={handleChange}>
-        <TabContainer direction="column" justify="center" items="center">
-          <StyledTab label={<Paragraph>rasberry vines</Paragraph>} />
-          <StyledTab label={<Paragraph>jillian / mood ring</Paragraph>} />
-          <StyledTab label={<Paragraph>bulletproof limousine</Paragraph>} />
-        </TabContainer>
+        {/* <TabContainer direction="column" justify="center" items="center"> */}
+        <StyledTab label={<Paragraph>rasberry vines</Paragraph>} />
+        <StyledTab label={<Paragraph>jillian / mood ring</Paragraph>} />
+        <StyledTab label={<Paragraph>bulletproof limousine</Paragraph>} />
+        {/* </TabContainer> */}
       </Tabs>
 
-      {selectedTab === 0 && <TabPanel value={selectedTab} index={0} />}
+      {selectedTab === 0 && (
+        <TabPanel value={selectedTab} index={0}>
+          <P>vines stuff</P>
+        </TabPanel>
+      )}
 
-      {selectedTab === 1 && <TabPanel value={selectedTab} index={1} />}
+      {selectedTab === 1 && (
+        <TabPanel value={selectedTab} index={1}>
+          <P>jillian stuff</P>
+        </TabPanel>
+      )}
 
-      {selectedTab === 1 && <TabPanel value={selectedTab} index={2} />}
+      {selectedTab === 2 && (
+        <TabPanel value={selectedTab} index={2}>
+          <P>limo stuff</P>
+        </TabPanel>
+      )}
 
-      {socialsData.map((item) => {
-        return (
-          <P color="#fff">
-            <A href={item.url} target="_blank" rel="noopener noreferrer">
-              {item.name}
-            </A>
-          </P>
-        );
-      })}
+      <FlexContainer direction="" justify="center" items="center">
+        {socialsData.map((item) => {
+          return (
+            <P color="#fff">
+              <A href={item.url} target="_blank" rel="noopener noreferrer">
+                {item.name}
+              </A>
+            </P>
+          );
+        })}
+      </FlexContainer>
     </Container>
   );
 };

@@ -24,6 +24,17 @@ const TabPanel = styled.div`
   margin-top: ${remHelper[8]};
 `;
 
+const TabItem = ({ item }) => {
+  const { url, service } = item;
+  return (
+    <Paragraph>
+      <A href={url} target="_blank" rel="noopener noreferrer">
+        {service}
+      </A>
+    </Paragraph>
+  );
+};
+
 const MusicTabs = ({ streaming, purchase }) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
@@ -41,13 +52,7 @@ const MusicTabs = ({ streaming, purchase }) => {
       {selectedTab === 0 && (
         <TabPanel value={selectedTab} index={0}>
           {streaming.map((item) => {
-            return (
-              <Paragraph>
-                <A href={item.url} target="_blank" rel="noopener noreferrer">
-                  {item.service}
-                </A>
-              </Paragraph>
-            );
+            return <TabItem item={item} />;
           })}
         </TabPanel>
       )}
@@ -55,13 +60,7 @@ const MusicTabs = ({ streaming, purchase }) => {
       {selectedTab === 1 && (
         <TabPanel value={selectedTab} index={1}>
           {purchase.map((item) => {
-            return (
-              <Paragraph>
-                <A href={item.url} target="_blank" rel="noopener noreferrer">
-                  {item.service}
-                </A>
-              </Paragraph>
-            );
+            return <TabItem item={item} />;
           })}
         </TabPanel>
       )}

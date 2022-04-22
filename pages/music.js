@@ -25,6 +25,7 @@ const Music = () => {
     <main>
       <HeadlineOne>music</HeadlineOne>
       {data.map((release) => {
+        console.log(release.links.streaming);
         return (
           <Container direction="column">
             <TitleContainer justify="space-between">

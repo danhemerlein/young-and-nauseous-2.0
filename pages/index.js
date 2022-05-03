@@ -26,6 +26,7 @@ const Home = () => {
       <Inner direction="column" justify="space-between">
         <main>
           <HeadlineOne>young and nauseous</HeadlineOne>
+
           <Heart width="140" height="140" fill="#C23B22" />
           <Bicycle width="140" height="140" fill="#C23B22" />
 
@@ -43,6 +44,7 @@ const Home = () => {
             })}
           </ul>
         </main>
+
         <Footer />
       </Inner>
     </Container>

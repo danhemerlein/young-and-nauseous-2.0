@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
 import { FlexContainer } from 'react-yan';
-import { Paragraph, HeadlineOne, StyledLink } from 'styles/elements/typography';
+import {
+  PageHeadline,
+  Paragraph,
+  StyledLink,
+} from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 import Footer from 'components/Footer/Footer';
 import indexData from 'data/index';
@@ -25,7 +29,7 @@ const Home = () => {
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <HeadlineOne>young and nauseous</HeadlineOne>
+          <PageHeadline>young and nauseous</PageHeadline>
 
           <Heart width="140" height="140" fill="#C23B22" />
           <Bicycle width="140" height="140" fill="#C23B22" />

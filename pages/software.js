@@ -1,6 +1,6 @@
 import {
   Paragraph,
-  HeadlineOne,
+  PageHeadline,
   HeadlineTwo,
   StyledLink,
 } from 'styles/elements/typography';
@@ -30,7 +30,7 @@ const Software = () => {
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <HeadlineOne>software</HeadlineOne>
+          <PageHeadline>software</PageHeadline>
           <Heart width="140" height="140" fill="#C23B22" />
 
           <P>

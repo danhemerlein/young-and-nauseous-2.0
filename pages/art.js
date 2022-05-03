@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { HeadlineOne } from 'styles/elements/typography';
+import { PageHeadline } from 'styles/elements/typography';
 import Footer from 'components/Footer/Footer';
 import { FlexContainer } from 'react-yan';
 import { remHelper } from 'styles/mixins';
@@ -19,17 +19,13 @@ const Inner = styled(FlexContainer)`
   height: 100%;
 `;
 
-const H1 = styled(HeadlineOne)`
-  margin-bottom: ${remHelper[16]};
-`;
-
 const Art = () => {
   const { data } = artData;
   return (
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <H1>album artwork & photography</H1>
+          <PageHeadline>album artwork & photography</PageHeadline>
 
           {data.map((item) => {
             return (

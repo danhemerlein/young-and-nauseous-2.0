@@ -1,7 +1,11 @@
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
-import { Paragraph, HeadlineOne } from 'styles/elements/typography';
-import { remHelper } from 'styles/mixins';
+import {
+  PageHeadline,
+  Paragraph,
+  HeadlineOne,
+} from 'styles/elements/typography';
+import { above, remHelper } from 'styles/mixins';
 
 import musicData from 'data/music';
 import Footer from 'components/Footer/Footer';
@@ -18,26 +22,25 @@ const TitleContainer = styled(FlexContainer)`
   margin-bottom: ${remHelper[8]};
 `;
 
+const StyledImg = styled.img`
+  width: 100%;
+`;
+
 const Music = () => {
   const { data } = musicData;
 
   return (
     <main>
-      <HeadlineOne>music</HeadlineOne>
+      <PageHeadline>music</PageHeadline>
+
       {data.map((release) => {
-        console.log(release.links.streaming);
         return (
           <Container direction="column">
             <TitleContainer justify="space-between">
               <Paragraph>{release.title}</Paragraph>
               <Paragraph>{release.releaseData}</Paragraph>
             </TitleContainer>
-            <img
-              src={release.artwork}
-              alt={release.artworkAlt}
-              width={500}
-              height={500}
-            />
+            <StyledImg src={release.artwork} alt={release.artworkAlt} />
             <MusicTabs
               streaming={release.links.streaming}
               purchase={release.links.purchase}

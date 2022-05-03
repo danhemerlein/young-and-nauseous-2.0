@@ -7,12 +7,14 @@ import {
 import styled from 'styled-components';
 import Footer from 'components/Footer/Footer';
 import Heart from 'components/assets/svg/Heart';
+import Bicycle from 'components/assets/svg/Bicycle';
 import { remHelper } from 'styles/mixins';
 import { FlexContainer } from 'react-yan';
 
 const H2 = styled(HeadlineTwo)`
-  margin-bottom: ${remHelper[16]};
+  margin: ${remHelper[16]} 0;
 `;
+
 const P = styled(Paragraph)`
   margin-bottom: ${remHelper[8]};
 `;
@@ -32,6 +34,7 @@ const Software = () => {
         <main>
           <PageHeadline>software</PageHeadline>
           <Heart width="140" height="140" fill="#C23B22" />
+          <Bicycle width="140" height="140" fill="#C23B22" />
 
           <P>
             This project counts moving software and data closer to their end
@@ -55,6 +58,7 @@ const Software = () => {
                 </StyledLink>
               </P>
             </li>
+
             <li>
               <H2>
                 <StyledLink

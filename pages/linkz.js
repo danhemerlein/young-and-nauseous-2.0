@@ -4,7 +4,7 @@ import { Tabs, Tab } from '@mui/material';
 import styled from 'styled-components';
 import { FlexContainer, P, A } from 'react-yan';
 
-import { HeadlineOne, Paragraph } from 'styles/elements/typography';
+import { PageHeadline, Paragraph } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 import linkzData from 'data/linkz';
 
@@ -12,8 +12,7 @@ const Container = styled.div`
   background: #000;
 `;
 
-const H1 = styled(HeadlineOne)`
-  margin-bottom: ${remHelper[16]};
+const H1 = styled(PageHeadline)`
   color: #fff;
 `;
 

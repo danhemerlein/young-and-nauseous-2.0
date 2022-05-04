@@ -51,7 +51,7 @@ const H1 = styled(PageHeadline)`
   padding-top: ${remHelper[16]};
 `;
 
-const SocialsFlexContainer = styled(FlexContainer)`
+const SocialsContainer = styled.div`
   p {
     text-align: center;
     margin: ${remHelper[12]} 0;
@@ -62,14 +62,19 @@ const SocialsFlexContainer = styled(FlexContainer)`
   }
 `;
 
+const LinkPara = styled(P)`
+  border: 1px solid #fff;
+  padding: ${remHelper[16]};
+`;
+
 const LinkItem = ({ item }) => {
   const { url, service, name } = item;
   return (
-    <P color="#fff">
+    <LinkPara color="#fff">
       <A href={url} target="_blank" rel="noopener noreferrer">
         {service || name}
       </A>
-    </P>
+    </LinkPara>
   );
 };
 
@@ -117,11 +122,11 @@ const Linkz = () => {
         );
       })}
 
-      <SocialsFlexContainer direction="column">
+      <SocialsContainer>
         {socialsData.map((item) => {
           return <LinkItem item={item} />;
         })}
-      </SocialsFlexContainer>
+      </SocialsContainer>
     </Container>
   );
 };

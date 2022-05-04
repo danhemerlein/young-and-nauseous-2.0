@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { FlexContainer } from 'react-yan';
 import Heart from 'components/assets/svg/Heart';
+import Bicycle from 'components/assets/svg/Bicycle';
 import Footer from 'components/Footer/Footer';
 import { HeadlineOne, StyledLink } from 'styles/elements/typography';
 
@@ -24,6 +25,7 @@ const Custom404 = () => {
             <StyledLink>
               <HeadlineOne>return home</HeadlineOne>
               <Heart width="140" height="140" fill="#C23B22" />
+              <Bicycle width="140" height="140" fill="#C23B22" />
             </StyledLink>
           </Link>
         </main>

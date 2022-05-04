@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-import { HeadlineOne, Paragraph, StyledLink } from 'styles/elements/typography';
+import {
+  PageHeadline,
+  Paragraph,
+  StyledLink,
+} from 'styles/elements/typography';
 import Heart from 'components/assets/svg/Heart';
 import { remHelper } from 'styles/mixins';
 import Footer from 'components/Footer/Footer';
@@ -25,7 +29,7 @@ const Credits = () => {
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <HeadlineOne>credits</HeadlineOne>
+          <PageHeadline>credits</PageHeadline>
           <Heart width="140" height="140" fill="#C23B22" />
           <Bicycle width="140" height="140" fill="#C23B22" />
 

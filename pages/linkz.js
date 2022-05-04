@@ -1,91 +1,127 @@
 import { useState } from 'react';
-import { Tabs, Tab } from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 
 import styled from 'styled-components';
 import { FlexContainer, P, A } from 'react-yan';
 
-import { PageHeadline, Paragraph } from 'styles/elements/typography';
-import { remHelper } from 'styles/mixins';
+import { PageHeadline } from 'styles/elements/typography';
+import { above, remHelper } from 'styles/mixins';
 import linkzData from 'data/linkz';
 
 const Container = styled.div`
   background: #000;
+
+  .MuiAccordion-root {
+    background: #000;
+    color: #fff;
+    border-top: 1px solid #c23b22;
+    border-bottom: 1px solid #c23b22;
+    margin: 0;
+  }
+
+  .MuiAccordionSummary-content {
+    p {
+      width: 100%;
+      text-align: center;
+    }
+
+    ${above.tablet`
+      p {
+        text-align: left;
+      }
+    `}
+  }
+
+  .MuiAccordionDetails-root {
+    display: flex;
+    p {
+      margin: ${remHelper[12]} 0;
+    }
+
+    div {
+      width: 50%;
+    }
+  }
 `;
 
 const H1 = styled(PageHeadline)`
   color: #fff;
+  padding-top: ${remHelper[16]};
 `;
 
-const StyledTab = styled(Tab)`
+const SocialsFlexContainer = styled(FlexContainer)`
   p {
-    color: #fff;
-    text-transform: lowercase;
+    text-align: center;
+    margin: ${remHelper[12]} 0;
+
+    ${above.tablet`
+      text-align: left;
+    `}
   }
 `;
 
-const TabPanel = styled.div`
-  color: #fff;
-
-  margin-top: ${remHelper[8]};
-`;
-
-const TabContainer = styled(FlexContainer)`
-  width: 100%;
-  button {
-    width: 250px;
-  }
-`;
+const LinkItem = ({ item }) => {
+  const { url, service, name } = item;
+  return (
+    <P color="#fff">
+      <A href={url} target="_blank" rel="noopener noreferrer">
+        {service || name}
+      </A>
+    </P>
+  );
+};
 
 const Linkz = () => {
-  const { socialsData } = linkzData;
+  const { socialsData, musicData } = linkzData;
 
-  const [selectedTab, setSelectedTab] = useState(0);
+  console.log(musicData);
+  console.log(socialsData);
 
-  const handleChange = (event, newValue) => {
-    setSelectedTab(newValue);
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => {
+    return (event, isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
+    };
   };
 
   return (
     <Container>
       <H1 textAlign="center">linkz</H1>
+      {musicData.map((item, key) => {
+        return (
+          <Accordion
+            expanded={expanded === `panel-${key}`}
+            onChange={handleChange(`panel-${key}`)}
+          >
+            <AccordionSummary>
+              <P>{item.title}</P>
+            </AccordionSummary>
 
-      <Tabs value={selectedTab} onChange={handleChange}>
-        {/* <TabContainer direction="column" justify="center" items="center"> */}
-        <StyledTab label={<Paragraph>rasberry vines</Paragraph>} />
-        <StyledTab label={<Paragraph>jillian / mood ring</Paragraph>} />
-        <StyledTab label={<Paragraph>bulletproof limousine</Paragraph>} />
-        {/* </TabContainer> */}
-      </Tabs>
+            <AccordionDetails>
+              <FlexContainer items="center" direction="column">
+                {item.links.streaming.map((link) => {
+                  return <LinkItem item={link} />;
+                })}
+              </FlexContainer>
 
-      {selectedTab === 0 && (
-        <TabPanel value={selectedTab} index={0}>
-          <P>vines stuff</P>
-        </TabPanel>
-      )}
+              <FlexContainer items="center" direction="column">
+                {item.links.purchase.map((link) => {
+                  return <LinkItem item={link} />;
+                })}
+              </FlexContainer>
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
 
-      {selectedTab === 1 && (
-        <TabPanel value={selectedTab} index={1}>
-          <P>jillian stuff</P>
-        </TabPanel>
-      )}
-
-      {selectedTab === 2 && (
-        <TabPanel value={selectedTab} index={2}>
-          <P>limo stuff</P>
-        </TabPanel>
-      )}
-
-      <FlexContainer direction="" justify="center" items="center">
+      <SocialsFlexContainer direction="column">
         {socialsData.map((item) => {
-          return (
-            <P color="#fff">
-              <A href={item.url} target="_blank" rel="noopener noreferrer">
-                {item.name}
-              </A>
-            </P>
-          );
+          return <LinkItem item={item} />;
         })}
-      </FlexContainer>
+      </SocialsFlexContainer>
     </Container>
   );
 };

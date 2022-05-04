@@ -24,14 +24,18 @@ const TabPanel = styled.div`
   margin-top: ${remHelper[8]};
 `;
 
+const P = styled(Paragraph)`
+  margin: ${remHelper[8]} 0;
+`;
+
 const TabItem = ({ item }) => {
   const { url, service } = item;
   return (
-    <Paragraph>
+    <P>
       <A href={url} target="_blank" rel="noopener noreferrer">
         {service}
       </A>
-    </Paragraph>
+    </P>
   );
 };
 
@@ -44,7 +48,15 @@ const MusicTabs = ({ streaming, purchase }) => {
 
   return (
     <TabWrapper>
-      <Tabs value={selectedTab} onChange={handleChange}>
+      <Tabs
+        value={selectedTab}
+        onChange={handleChange}
+        TabIndicatorProps={{
+          style: {
+            backgroundColor: '#000',
+          },
+        }}
+      >
         <StyledTab label={<Paragraph>streaming</Paragraph>} />
         <StyledTab label={<Paragraph>purchase</Paragraph>} />
       </Tabs>

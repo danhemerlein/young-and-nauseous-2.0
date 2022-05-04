@@ -1,21 +1,15 @@
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
-import {
-  PageHeadline,
-  Paragraph,
-  HeadlineOne,
-} from 'styles/elements/typography';
-import { above, remHelper } from 'styles/mixins';
+import { PageHeadline, Paragraph } from 'styles/elements/typography';
+import { remHelper } from 'styles/mixins';
 
 import musicData from 'data/music';
 import Footer from 'components/Footer/Footer';
 import MusicTabs from 'components/MusicTabs/MusicTabs';
 
 const Container = styled(FlexContainer)`
-  margin-top: ${remHelper[16]};
+  margin: ${remHelper[24]} auto;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const TitleContainer = styled(FlexContainer)`

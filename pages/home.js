@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import Badge from 'components/Badge/Badge';
 import { FlexContainer } from 'react-yan';
 import {
   PageHeadline,
@@ -26,12 +27,13 @@ const Home = () => {
     <Container direction="column">
       <Inner direction="column" justify="center" items="center">
         <main>
+          <Badge />
           <PageHeadline>young and nauseous</PageHeadline>
 
           <FlexContainer as="ul" justify="space-between">
             {homePageData.map((datum) => {
               return (
-                <ListItem>
+                <ListItem key={`${datum.url}-${datum.title}`}>
                   <Paragraph>
                     <Link href={datum.url} passHref>
                       <StyledLink>{datum.title}</StyledLink>

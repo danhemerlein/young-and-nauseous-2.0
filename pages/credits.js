@@ -66,7 +66,6 @@ const Credits = () => {
           </P>
         </main>
       </Inner>
-      <Footer />
     </Container>
   );
 };

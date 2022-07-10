@@ -41,7 +41,6 @@ const Music = () => {
           </Container>
         );
       })}
-      <Footer />
     </main>
   );
 };

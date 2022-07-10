@@ -28,7 +28,7 @@ const Footer = () => {
         </Paragraph>
         {data.map((item) => {
           return (
-            <Paragraph>
+            <Paragraph key={`${item.url}-${item.name}`}>
               <A href={item.url} target="_blank" rel="noopener noreferrer">
                 {item.name}
               </A>
@@ -36,7 +36,6 @@ const Footer = () => {
           );
         })}
       </FlexContainer>
-      {/* <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph> */}
     </StyledFlexContainer>
   );
 };

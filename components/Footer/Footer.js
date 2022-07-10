@@ -31,7 +31,7 @@ const Footer = () => {
           );
         })}
       </FlexContainer>
-      <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph>
+      {/* <Paragraph>© Dan Hemerlein {new Date().getFullYear()}</Paragraph> */}
     </StyledFlexContainer>
   );
 };

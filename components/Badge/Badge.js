@@ -1,8 +1,14 @@
-import { Container } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
+import { remHelper } from 'styles/mixins';
 import { Paragraph } from 'styles/elements/typography';
+
+const Container = styled.div`
+  position: absolute;
+  top: ${remHelper[10]};
+  right: ${remHelper[10]};
+`;
 
 const BadgeBox = styled(FlexContainer)`
   @keyframes rotate {
@@ -22,9 +28,10 @@ const BadgeBox = styled(FlexContainer)`
   animation-duration: 50s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+
+  animation-play-state: ${({ playAnimation }) => {
+    return playAnimation ? 'running' : 'paused';
+  }};
 
   color: ${({ theme }) => {
     return theme.background;
@@ -35,32 +42,58 @@ const BadgeBox = styled(FlexContainer)`
   }};
 `;
 
+const StyledButton = styled.button`
+  background: transparent;
+  outline: 0;
+  border: 1px solid;
+  boder-color: ${({ theme }) => {
+    return theme.background;
+  }};
+  padding: ${remHelper[4]};
+`;
+
 const StyledParagraph = styled(Paragraph)`
   width: 100%;
 `;
 
-const getRandomEl = (arr) => {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
-
 const Badge = () => {
-  const data = ['Y&N', 'SO YOUNG SO NAUSEOUS', 'YOU & US', 'SOY SON'];
-  const [badgeText, setBadgeText] = useState(getRandomEl(data));
   const [playing, setPlaying] = useState(true);
-
-  useEffect(() => {
-    setInterval(() => {
-      setBadgeText(getRandomEl(data));
-    }, 10000);
-  }, []);
+  const [pauseButtonClicked, setPauseButtonClicked] = useState(false);
 
   return (
     <Container>
-      <BadgeBox jusitfy="center" items="center">
-        <StyledParagraph textAlign="center">{badgeText}</StyledParagraph>
+      <BadgeBox
+        onMouseEnter={() => {
+          if (!pauseButtonClicked) {
+            return setPlaying(false);
+          }
+        }}
+        onMouseLeave={() => {
+          if (!pauseButtonClicked) {
+            setPlaying(true);
+          }
+        }}
+        playAnimation={playing}
+        jusitfy="center"
+        items="center"
+      >
+        <StyledParagraph textAlign="center">
+          SO YOUNG
+          <br /> SO NAUSEOUS
+        </StyledParagraph>
       </BadgeBox>
 
-      <button type="button">{playing ? 'play' : 'pause'}</button>
+      <StyledButton
+        type="button"
+        onClick={() => {
+          setPlaying(!playing);
+          setPauseButtonClicked(!pauseButtonClicked);
+        }}
+      >
+        <Paragraph>
+          {!playing && pauseButtonClicked ? 'play' : 'pause'}
+        </Paragraph>
+      </StyledButton>
     </Container>
   );
 };

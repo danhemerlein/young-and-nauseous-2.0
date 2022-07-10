@@ -5,7 +5,7 @@ import { FlexContainer } from 'react-yan';
 import {
   PageHeadline,
   Paragraph,
-  StyledLink,
+  StyledLink
 } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 import homePageData from 'data/home';

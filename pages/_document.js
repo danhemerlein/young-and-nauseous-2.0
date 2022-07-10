@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
             return (props) => {
               return sheet.collectStyles(<App {...props} />);
             };
-          },
+          }
         });
       };
 
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();

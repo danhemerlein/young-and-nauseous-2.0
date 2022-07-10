@@ -1,7 +1,7 @@
 import artwork from './artwork';
 
 const artData = {
-  data: [...artwork],
+  data: [...artwork]
 };
 
 export default artData;

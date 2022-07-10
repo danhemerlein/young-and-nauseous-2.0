@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FlexContainer } from 'react-yan';
 import styled from 'styled-components';
 import { remHelper } from 'styles/mixins';

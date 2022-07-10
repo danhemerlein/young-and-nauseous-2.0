@@ -1,4 +1,4 @@
-import AppHead from 'components/AppHead';
+// import AppHead from 'components/AppHead';
 import Footer from 'components/Footer/Footer';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
@@ -32,11 +32,11 @@ const App = ({ Component, pageProps }) => {
 
       <ThemeProvider theme={theme.light}>
         <ReactYanOverrideProvider value={{ fontFamily: 'lack_regular' }}>
-          <AppHead />
+          {/* <AppHead /> */}
 
           <AppContainer backgroundOverride={overrideAppContainerBackground}>
             <Component {...pageProps} />
-            {showFooter ? <Footer /> : <></>}
+            {showFooter ? <Footer /> : null}
           </AppContainer>
         </ReactYanOverrideProvider>
       </ThemeProvider>

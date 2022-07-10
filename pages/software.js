@@ -2,11 +2,9 @@ import {
   Paragraph,
   PageHeadline,
   HeadlineTwo,
-  StyledLink,
+  StyledLink
 } from 'styles/elements/typography';
 import styled from 'styled-components';
-import Heart from 'components/assets/svg/Heart';
-import Bicycle from 'components/assets/svg/Bicycle';
 import { remHelper } from 'styles/mixins';
 import { FlexContainer } from 'react-yan';
 
@@ -32,8 +30,6 @@ const Software = () => {
       <Inner direction="column" justify="space-between">
         <main>
           <PageHeadline>software</PageHeadline>
-          <Heart width="140" height="140" fill="#C23B22" />
-          <Bicycle width="140" height="140" fill="#C23B22" />
 
           <P>
             This project counts moving software and data closer to their end

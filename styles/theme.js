@@ -6,14 +6,14 @@ const theme = {
   light: {
     foreground: '#000000',
     background: '#FFFFFF',
-    red: '#C23B22',
+    red: '#C23B22'
   },
 
   dark: {
     foreground: '#FFFFFF',
     bacground: '#000000',
-    red: '#C23B22',
-  },
+    red: '#C23B22'
+  }
 };
 
 export default theme;

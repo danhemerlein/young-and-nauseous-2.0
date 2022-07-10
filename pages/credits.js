@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   PageHeadline,
   Paragraph,
-  StyledLink,
+  StyledLink
 } from 'styles/elements/typography';
 import Heart from 'components/assets/svg/Heart';
 import { remHelper } from 'styles/mixins';

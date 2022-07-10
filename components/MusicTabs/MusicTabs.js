@@ -53,8 +53,8 @@ const MusicTabs = ({ streaming, purchase }) => {
         onChange={handleChange}
         TabIndicatorProps={{
           style: {
-            backgroundColor: '#000',
-          },
+            backgroundColor: '#000'
+          }
         }}
       >
         <StyledTab label={<Paragraph>streaming</Paragraph>} />

@@ -6,6 +6,11 @@ import { remHelper } from 'styles/mixins';
 import socialsData from 'data/socials';
 
 const StyledFlexContainer = styled(FlexContainer)`
+  position: absolute;
+
+  bottom: ${remHelper[10]};
+  left: ${remHelper[10]};
+
   p:not(:first-of-type) {
     margin-left: ${remHelper[8]};
   }

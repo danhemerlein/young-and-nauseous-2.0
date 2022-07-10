@@ -7,7 +7,6 @@ import {
 } from 'styles/elements/typography';
 import Heart from 'components/assets/svg/Heart';
 import { remHelper } from 'styles/mixins';
-import Footer from 'components/Footer/Footer';
 import { FlexContainer } from 'react-yan';
 import Bicycle from '../components/assets/svg/Bicycle';
 

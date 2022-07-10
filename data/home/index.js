@@ -11,6 +11,10 @@ const indexData = [
     title: 'art',
     url: '/art',
   },
+  {
+    title: 'shop',
+    url: '/shop',
+  },
 ];
 
 export default indexData;

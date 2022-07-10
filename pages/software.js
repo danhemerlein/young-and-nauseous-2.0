@@ -5,7 +5,6 @@ import {
   StyledLink,
 } from 'styles/elements/typography';
 import styled from 'styled-components';
-import Footer from 'components/Footer/Footer';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
 import { remHelper } from 'styles/mixins';
@@ -84,7 +83,6 @@ const Software = () => {
             </li>
           </ul>
         </main>
-        <Footer />
       </Inner>
     </Container>
   );

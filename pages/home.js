@@ -7,7 +7,6 @@ import {
   StyledLink,
 } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
-import Footer from 'components/Footer/Footer';
 import homePageData from 'data/home';
 
 const Container = styled(FlexContainer)`
@@ -43,8 +42,6 @@ const Home = () => {
             })}
           </FlexContainer>
         </main>
-
-        <Footer />
       </Inner>
     </Container>
   );

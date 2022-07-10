@@ -4,7 +4,6 @@ import { PageHeadline, Paragraph } from 'styles/elements/typography';
 import { remHelper } from 'styles/mixins';
 
 import musicData from 'data/music';
-import Footer from 'components/Footer/Footer';
 import MusicTabs from 'components/MusicTabs/MusicTabs';
 
 const Container = styled(FlexContainer)`

@@ -1,4 +1,5 @@
 import AppHead from 'components/AppHead';
+import Footer from 'components/Footer/Footer';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { ReactYanOverrideProvider } from 'react-yan';
@@ -11,13 +12,17 @@ const App = ({ Component, pageProps }) => {
   const [overrideAppContainerBackground, setOverrideAppContainerBackground] =
     useState(false);
 
+  const [showFooter, setShowfooter] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
     if (router.asPath === '/') {
       setOverrideAppContainerBackground(true);
+      setShowfooter(false);
     } else {
       setOverrideAppContainerBackground(false);
+      setShowfooter(true);
     }
   }, [router.asPath]);
 
@@ -31,6 +36,7 @@ const App = ({ Component, pageProps }) => {
 
           <AppContainer backgroundOverride={overrideAppContainerBackground}>
             <Component {...pageProps} />
+            {showFooter ? <Footer /> : <></>}
           </AppContainer>
         </ReactYanOverrideProvider>
       </ThemeProvider>

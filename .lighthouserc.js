@@ -4,6 +4,7 @@ module.exports = {
       staticDistDir: '.next'
     },
     assert: {
+      preset: 'lighthouse:recommneded'
       // assert options here
     },
     upload: {

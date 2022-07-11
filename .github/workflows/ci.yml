@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+          lhci_github_token: ${{ secrets.LHCI_GITHUB_TOKEN }}
+
       - name: npm install, build
         run: |
           npm install

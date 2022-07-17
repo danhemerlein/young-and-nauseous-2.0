@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <title>young & nauseous</title>
           <link

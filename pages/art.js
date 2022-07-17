@@ -14,7 +14,7 @@ const Container = styled.div`
   }
 `;
 
-const Inner = styled(FlexContainer)`
+const Inner = styled(FlexContainer)`2
   height: 100%;
 `;
 
@@ -28,7 +28,13 @@ const Art = () => {
 
           {data.map((item) => {
             return (
-              <img src={item.url} alt={item.art} width="100%" height="100%" />
+              <img
+                key={item.url}
+                src={item.url}
+                alt={item.alt}
+                width="100%"
+                height="100%"
+              />
             );
           })}
         </main>

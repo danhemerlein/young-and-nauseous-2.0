@@ -1,7 +1,7 @@
 const theme = {
   breakpoints: ['320px', '720px', '1024px', '1440px'],
 
-  spacing: [4, 8, 16, 24, 32, 40, 48],
+  spacing: [4, 8, 10, 12, 16, 24, 32, 40, 48],
 
   light: {
     foreground: '#000000',

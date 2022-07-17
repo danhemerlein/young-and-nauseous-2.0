@@ -8,7 +8,7 @@ import {
 import Heart from 'components/assets/svg/Heart';
 import { remHelper } from 'styles/mixins';
 import { FlexContainer } from 'react-yan';
-import Bicycle from '../components/assets/svg/Bicycle';
+import Bicycle from 'components/assets/svg/Bicycle';
 
 const Container = styled(FlexContainer)`
   height: calc(100vh - 20px);

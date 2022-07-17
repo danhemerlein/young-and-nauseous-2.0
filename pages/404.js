@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FlexContainer } from 'react-yan';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
-import Footer from 'components/Footer/Footer';
+
 import { HeadlineOne, StyledLink } from 'styles/elements/typography';
 
 const Container = styled(FlexContainer)`
@@ -19,17 +19,17 @@ const Inner = styled(FlexContainer)`
 const Custom404 = () => {
   return (
     <Container direction="column">
-      <Inner direction="column" justify="space-between">
+      <Inner direction="column" justify="center" items="center">
         <main>
+          <HeadlineOne textAlign="center">404 error</HeadlineOne>
           <Link href="/" passHref>
             <StyledLink>
-              <HeadlineOne>return home</HeadlineOne>
+              <HeadlineOne textAlign="center">return home</HeadlineOne>
               <Heart width="140" height="140" fill="#C23B22" />
               <Bicycle width="140" height="140" fill="#C23B22" />
             </StyledLink>
           </Link>
         </main>
-        <Footer />
       </Inner>
     </Container>
   );

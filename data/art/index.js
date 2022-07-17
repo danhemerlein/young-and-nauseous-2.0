@@ -1,8 +1,7 @@
 import artwork from './artwork';
-import photography from './photography';
 
 const artData = {
-  data: [...artwork, ...photography],
+  data: [...artwork]
 };
 
 export default artData;

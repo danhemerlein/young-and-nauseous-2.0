@@ -1,16 +1,20 @@
 const indexData = [
   {
     title: 'music',
-    url: '/music',
+    url: '/music'
   },
   {
     title: 'software',
-    url: '/software',
+    url: '/software'
   },
   {
-    title: 'artwork & photography',
-    url: '/art',
+    title: 'art',
+    url: '/art'
   },
+  {
+    title: 'shop',
+    url: '/shop'
+  }
 ];
 
 export default indexData;

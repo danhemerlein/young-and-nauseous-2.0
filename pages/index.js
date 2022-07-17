@@ -3,56 +3,37 @@ import styled from 'styled-components';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
 import { FlexContainer } from 'react-yan';
-import {
-  PageHeadline,
-  Paragraph,
-  StyledLink,
-} from 'styles/elements/typography';
-import { remHelper } from 'styles/mixins';
-import Footer from 'components/Footer/Footer';
-import indexData from 'data/index';
 
 const Container = styled(FlexContainer)`
   height: calc(100vh - 20px);
 `;
 
+const LinkSpan = styled.span`
+  cursor: pointer;
+`;
+
 const Inner = styled(FlexContainer)`
   height: 100%;
+  background-color: ${({ theme }) => {
+    return theme.red;
+  }};
 `;
 
-const ListItem = styled.li`
-  margin-top: ${remHelper[8]};
-`;
-
-const Home = () => {
+const LandingPage = () => {
   return (
     <Container direction="column">
-      <Inner direction="column" justify="space-between">
+      <Inner direction="column" justify="center" items="center">
         <main>
-          <PageHeadline>young and nauseous</PageHeadline>
-
-          <Heart width="140" height="140" fill="#C23B22" />
-          <Bicycle width="140" height="140" fill="#C23B22" />
-
-          <ul>
-            {indexData.map((datum) => {
-              return (
-                <ListItem>
-                  <Paragraph>
-                    <Link href={datum.url} passHref>
-                      <StyledLink>{datum.title}</StyledLink>
-                    </Link>
-                  </Paragraph>
-                </ListItem>
-              );
-            })}
-          </ul>
+          <Link href="/home" passHref>
+            <LinkSpan>
+              <Heart width="140" height="140" fill="#000000" />
+              <Bicycle width="140" height="140" fill="#000000" />
+            </LinkSpan>
+          </Link>
         </main>
-
-        <Footer />
       </Inner>
     </Container>
   );
 };
 
-export default Home;
+export default LandingPage;

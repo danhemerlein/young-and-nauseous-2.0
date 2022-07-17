@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { PageHeadline } from 'styles/elements/typography';
-import Footer from 'components/Footer/Footer';
 import { FlexContainer } from 'react-yan';
 import { remHelper } from 'styles/mixins';
 import artData from 'data/art';
@@ -25,7 +24,7 @@ const Art = () => {
     <Container direction="column">
       <Inner direction="column" justify="space-between">
         <main>
-          <PageHeadline>album artwork & photography</PageHeadline>
+          <PageHeadline>artwork</PageHeadline>
 
           {data.map((item) => {
             return (
@@ -34,7 +33,6 @@ const Art = () => {
           })}
         </main>
       </Inner>
-      <Footer />
     </Container>
   );
 };

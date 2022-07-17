@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
             return (props) => {
               return sheet.collectStyles(<App {...props} />);
             };
-          },
+          }
         });
       };
 
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();
@@ -77,6 +77,11 @@ export default class MyDocument extends Document {
             property="twitter:image"
             content="https://www.youngandnauseo.us/images/meta.jpg"
           />
+          <link
+            rel="apple-touch-icon"
+            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
+          />
+
           <link href="/fonts/fonts.css" rel="stylesheet" />
         </Head>
         <body>

@@ -11,6 +11,10 @@ values = Object.values(values).reduce((acc, curr) => {
   return (acc[curr] = curr), acc;
 }, values);
 
+values.override = (value) => {
+  return `${toRem(value)}rem`;
+};
+
 /*
 Usage:
 const StyledComponent = styled.div`
@@ -27,6 +31,11 @@ export const remHelper = new Proxy(values, {
     const value = target[name];
     if (typeof value === 'function') {
       return value;
+    }
+
+    if (!value) {
+      console.warn(`Using non-standard value (${name})`);
+      return `${toRem(name)}rem`;
     }
 
     return `${toRem(value)}rem`;

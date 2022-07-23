@@ -1,10 +1,10 @@
 import Link from 'next/link';
-
 import styled from 'styled-components';
+import { FlexContainer } from 'react-yan';
+
 import AppHead from 'components/AppHead';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
-import { FlexContainer } from 'react-yan';
 
 const Container = styled(FlexContainer)`
   height: calc(100vh - 20px);

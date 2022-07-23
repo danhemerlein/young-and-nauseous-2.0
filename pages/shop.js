@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexContainer } from 'react-yan';
+
+import AppHead from 'components/AppHead';
 import { HeadlineOne } from 'styles/elements/typography';
 
 const Container = styled(FlexContainer)`
@@ -15,14 +17,18 @@ const Inner = styled(FlexContainer)`
 
 const Shop = () => {
   return (
-    <Container>
-      <Inner direction="column" justify="center" items="center">
-        <main>
-          <HeadlineOne textAlign="center">under construction</HeadlineOne>
-          <HeadlineOne textAlign="center">coming soon</HeadlineOne>
-        </main>
-      </Inner>
-    </Container>
+    <>
+      <AppHead />
+
+      <Container>
+        <Inner direction="column" justify="center" items="center">
+          <main>
+            <HeadlineOne textAlign="center">under construction</HeadlineOne>
+            <HeadlineOne textAlign="center">coming soon</HeadlineOne>
+          </main>
+        </Inner>
+      </Container>
+    </>
   );
 };
 

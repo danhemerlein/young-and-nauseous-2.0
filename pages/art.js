@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { FlexContainer } from 'react-yan';
 
 import { PageHeadline } from 'styles/elements/typography';
-import { FlexContainer } from 'react-yan';
+import AppHead from 'components/AppHead';
 import { remHelper } from 'styles/mixins';
 import artData from 'data/art';
 
@@ -21,25 +22,29 @@ const Inner = styled(FlexContainer)`2
 const Art = () => {
   const { data } = artData;
   return (
-    <Container direction="column">
-      <Inner direction="column" justify="space-between">
-        <main>
-          <PageHeadline>artwork</PageHeadline>
+    <>
+      <AppHead />
 
-          {data.map((item) => {
-            return (
-              <img
-                key={item.url}
-                src={item.url}
-                alt={item.alt}
-                width="100%"
-                height="100%"
-              />
-            );
-          })}
-        </main>
-      </Inner>
-    </Container>
+      <Container direction="column">
+        <Inner direction="column" justify="space-between">
+          <main>
+            <PageHeadline>artwork</PageHeadline>
+
+            {data.map((item) => {
+              return (
+                <img
+                  key={item.url}
+                  src={item.url}
+                  alt={item.alt}
+                  width="100%"
+                  height="100%"
+                />
+              );
+            })}
+          </main>
+        </Inner>
+      </Container>
+    </>
   );
 };
 

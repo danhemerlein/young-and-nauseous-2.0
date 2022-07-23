@@ -1,5 +1,11 @@
 {
+  "name": "young and nauseous",
   "short_name": "young and nauseous",
+  "display": "browser",
+  "start_url": "/home",
+  "background_color": "#C23B22",
+  "theme_color": "#C23B22",
+  "orientation": "portrait-primary",
 
   "icons": [
     {
@@ -7,10 +13,5 @@
       "type": "image/png",
       "sizes": "160x160"
     }
-  ],
-
-  "start_url": "/home",
-  "background_color": "#C23B22",
-  "theme_color": "#C23B22",
-  "display": "browser"
+  ]
 }

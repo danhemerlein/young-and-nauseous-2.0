@@ -34,11 +34,25 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <title>young & nauseous</title>
           <link
             rel="icon"
+            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
+          />
+
+          <link rel="manifest" href="/manifest.json" />
+
+          <link
+            rel="preload"
+            href="/fonts/lack-regular.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin="anonymous"
+          />
+
+          <link
+            rel="apple-touch-icon"
             href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
           />
 
@@ -77,12 +91,6 @@ export default class MyDocument extends Document {
             property="twitter:image"
             content="https://www.youngandnauseo.us/images/meta.jpg"
           />
-          <link
-            rel="apple-touch-icon"
-            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
-          />
-
-          <link href="/fonts/fonts.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />

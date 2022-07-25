@@ -32,6 +32,7 @@ export const remHelper = new Proxy(values, {
     if (typeof value === 'function') {
       return value;
     }
+
     if (!value) {
       console.warn(`Using non-standard value (${name})`);
       return `${toRem(name)}rem`;

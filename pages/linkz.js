@@ -6,6 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import styled from 'styled-components';
 import { FlexContainer, P, A } from 'react-yan';
 
+import AppHead from 'components/AppHead';
 import { PageHeadline } from 'styles/elements/typography';
 import { above, remHelper } from 'styles/mixins';
 import linkzData from 'data/linkz';
@@ -80,10 +81,6 @@ const LinkItem = ({ item }) => {
 
 const Linkz = () => {
   const { socialsData, musicData } = linkzData;
-
-  console.log(musicData);
-  console.log(socialsData);
-
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => {
@@ -93,41 +90,45 @@ const Linkz = () => {
   };
 
   return (
-    <Container>
-      <H1 textAlign="center">linkz</H1>
-      {musicData.map((item, key) => {
-        return (
-          <Accordion
-            expanded={expanded === `panel-${key}`}
-            onChange={handleChange(`panel-${key}`)}
-          >
-            <AccordionSummary>
-              <P>{item.title}</P>
-            </AccordionSummary>
+    <>
+      <AppHead />
 
-            <AccordionDetails>
-              <FlexContainer items="center" direction="column">
-                {item.links.streaming.map((link) => {
-                  return <LinkItem item={link} />;
-                })}
-              </FlexContainer>
+      <Container>
+        <H1 textAlign="center">linkz</H1>
+        {musicData.map((item, key) => {
+          return (
+            <Accordion
+              expanded={expanded === `panel-${key}`}
+              onChange={handleChange(`panel-${key}`)}
+            >
+              <AccordionSummary>
+                <P>{item.title}</P>
+              </AccordionSummary>
 
-              <FlexContainer items="center" direction="column">
-                {item.links.purchase.map((link) => {
-                  return <LinkItem item={link} />;
-                })}
-              </FlexContainer>
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+              <AccordionDetails>
+                <FlexContainer items="center" direction="column">
+                  {item.links.streaming.map((link) => {
+                    return <LinkItem item={link} />;
+                  })}
+                </FlexContainer>
 
-      <SocialsContainer>
-        {socialsData.map((item) => {
-          return <LinkItem item={item} />;
+                <FlexContainer items="center" direction="column">
+                  {item.links.purchase.map((link) => {
+                    return <LinkItem item={link} />;
+                  })}
+                </FlexContainer>
+              </AccordionDetails>
+            </Accordion>
+          );
         })}
-      </SocialsContainer>
-    </Container>
+
+        <SocialsContainer>
+          {socialsData.map((item) => {
+            return <LinkItem item={item} />;
+          })}
+        </SocialsContainer>
+      </Container>
+    </>
   );
 };
 

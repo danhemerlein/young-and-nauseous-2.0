@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { FlexContainer } from 'react-yan';
+
+import AppHead from 'components/AppHead';
 import Heart from 'components/assets/svg/Heart';
 import Bicycle from 'components/assets/svg/Bicycle';
-import { FlexContainer } from 'react-yan';
 
 const Container = styled(FlexContainer)`
   height: calc(100vh - 20px);
@@ -21,18 +23,21 @@ const Inner = styled(FlexContainer)`
 
 const LandingPage = () => {
   return (
-    <Container direction="column">
-      <Inner direction="column" justify="center" items="center">
-        <main>
-          <Link href="/home" passHref>
-            <LinkSpan>
-              <Heart width="140" height="140" fill="#000000" />
-              <Bicycle width="140" height="140" fill="#000000" />
-            </LinkSpan>
-          </Link>
-        </main>
-      </Inner>
-    </Container>
+    <>
+      <AppHead />
+      <Container direction="column">
+        <Inner direction="column" justify="center" items="center">
+          <main>
+            <Link href="/home" as="/home" passHref>
+              <LinkSpan>
+                <Heart width="140" height="140" fill="#000000" />
+                <Bicycle width="140" height="140" fill="#000000" />
+              </LinkSpan>
+            </Link>
+          </main>
+        </Inner>
+      </Container>
+    </>
   );
 };
 

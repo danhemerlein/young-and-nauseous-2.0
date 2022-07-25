@@ -1,5 +1,3 @@
-// import AppHead from 'components/AppHead';
-import Footer from 'components/Footer/Footer';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { ReactYanOverrideProvider } from 'react-yan';
@@ -7,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { AppContainer } from 'styles/elements';
 import GlobalReset from 'styles/global';
 import theme from 'styles/theme';
+import Footer from 'components/Footer/Footer';
 
 const App = ({ Component, pageProps }) => {
   const [overrideAppContainerBackground, setOverrideAppContainerBackground] =
@@ -32,8 +31,6 @@ const App = ({ Component, pageProps }) => {
 
       <ThemeProvider theme={theme.light}>
         <ReactYanOverrideProvider value={{ fontFamily: 'lack_regular' }}>
-          {/* <AppHead /> */}
-
           <AppContainer backgroundOverride={overrideAppContainerBackground}>
             <Component {...pageProps} />
             {showFooter ? <Footer /> : null}

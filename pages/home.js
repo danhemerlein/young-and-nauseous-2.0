@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AppHead from 'components/AppHead';
 import styled from 'styled-components';
 import Badge from 'components/Badge/Badge';
 import { FlexContainer } from 'react-yan';
@@ -24,28 +25,31 @@ const ListItem = styled.li`
 
 const Home = () => {
   return (
-    <Container direction="column">
-      <Inner direction="column" justify="center" items="center">
-        <main>
-          <Badge />
-          <PageHeadline>young and nauseous</PageHeadline>
+    <>
+      <AppHead />
+      <Container direction="column">
+        <Inner direction="column" justify="center" items="center">
+          <main>
+            <Badge />
+            <PageHeadline>young and nauseous</PageHeadline>
 
-          <FlexContainer as="ul" justify="space-between">
-            {homePageData.map((datum) => {
-              return (
-                <ListItem key={`${datum.url}-${datum.title}`}>
-                  <Paragraph>
-                    <Link href={datum.url} passHref>
-                      <StyledLink>{datum.title}</StyledLink>
-                    </Link>
-                  </Paragraph>
-                </ListItem>
-              );
-            })}
-          </FlexContainer>
-        </main>
-      </Inner>
-    </Container>
+            <FlexContainer as="ul" justify="space-between">
+              {homePageData.map((datum) => {
+                return (
+                  <ListItem key={`${datum.url}-${datum.title}`}>
+                    <Paragraph>
+                      <Link href={datum.url} as={datum.url} passHref>
+                        <StyledLink>{datum.title}</StyledLink>
+                      </Link>
+                    </Paragraph>
+                  </ListItem>
+                );
+              })}
+            </FlexContainer>
+          </main>
+        </Inner>
+      </Container>
+    </>
   );
 };
 

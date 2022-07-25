@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
             href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/black-heart_1f5a4.png"
           />
 
-          <link rel="manifest" href="/build-manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
 
           <link
             rel="preload"

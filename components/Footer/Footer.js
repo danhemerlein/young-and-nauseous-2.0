@@ -22,7 +22,7 @@ const Footer = () => {
     <StyledFlexContainer justify="space-between">
       <FlexContainer>
         <Paragraph>
-          <Link href="/credits" passHref>
+          <Link href="/credits" as="/credits" passHref>
             <StyledLink>credits</StyledLink>
           </Link>
         </Paragraph>

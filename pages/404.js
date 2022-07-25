@@ -25,7 +25,7 @@ const Custom404 = () => {
         <Inner direction="column" justify="center" items="center">
           <main>
             <HeadlineOne textAlign="center">404 error</HeadlineOne>
-            <Link href="/" passHref>
+            <Link href="/" as="/" passHref>
               <StyledLink>
                 <HeadlineOne textAlign="center">return home</HeadlineOne>
                 <Heart width="140" height="140" fill="#C23B22" />

@@ -28,7 +28,7 @@ const LandingPage = () => {
       <Container direction="column">
         <Inner direction="column" justify="center" items="center">
           <main>
-            <Link href="/home" passHref>
+            <Link href="/home" as="/home" passHref>
               <LinkSpan>
                 <Heart width="140" height="140" fill="#000000" />
                 <Bicycle width="140" height="140" fill="#000000" />

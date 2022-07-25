@@ -38,7 +38,7 @@ const Home = () => {
                 return (
                   <ListItem key={`${datum.url}-${datum.title}`}>
                     <Paragraph>
-                      <Link href={datum.url} passHref>
+                      <Link href={datum.url} as={datum.url} passHref>
                         <StyledLink>{datum.title}</StyledLink>
                       </Link>
                     </Paragraph>
